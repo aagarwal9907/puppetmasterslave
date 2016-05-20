@@ -13,7 +13,7 @@ Install ntp to synchronize the timing of the servers.
  `rpm -ivh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm`
 Install puppetpackage server
 `yum -y install puppetserver`
-## Configurinng puppet server configuration of memory
+## Configurinng puppet server memory
 By Default the puppet server is configured to take 2 gb memory. we can edit the server configuration to enable it to run with either more or less memory depends upon amount of fixed memory or no of agents that this server has to manage. 
 
 `/etc/sysconfig/puppetserver` this connfiguration file 
