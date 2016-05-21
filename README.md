@@ -89,7 +89,17 @@ save and exit and then run the following command
 This will install the stdlib from puppet forge to the local modules directory  
 
 ## Creating modules
-The puppet modules will be created under /etc/pupptlabs/code/modules directory. 
+The puppet modules will be created under /etc/puppetlabs/code/environments/production/modules directory. 
+the Manifests will have the usual site.pp this site.pp will refer to   
+`node <node_name>, ..{
+}`
+The logic to invoke the module will be witten between the block of the node by adding include <module_name>  
+the module it self may be calling other modules or sub-modules. 
+
+## Executing puppet on the node machine
+`puppet agent --test`  
+The above command can be used to execute the puppet catalog and check if everything works fine. 
+
 
 
 
