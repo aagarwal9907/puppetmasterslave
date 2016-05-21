@@ -61,6 +61,17 @@ Info: Caching catalog for 101bunty
 Info: Applying configuration version '1463804736'
 Notice: Applied catalog in 0.01 seconds`
 
+## More configuration on the agent node
+The Agent node need to be configured to fetch the catalog from the puppet master. For this the following file need to be edited
+
+`/etc/puppetlabs/puppet/puppet.conf`
+
+Add following Lines in it
+`[main]
+server=103bunty #the puppet server master
+report=true
+pluginsync=true
+`
 
 
 
