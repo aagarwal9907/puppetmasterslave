@@ -70,8 +70,28 @@ Add following Lines in it
 `[main]  
 server=103bunty #the puppet server master  
 report=true  
-pluginsync=true  
 `
+you will also require rubygems on the server to start using the standard library of puppet.
+`yum install rubygems`  
+`yum install librarian-puppet`  
+on the master node go to following directory  
+
+`/etc/puppetlabs/code` add file Puppetfile
+with following contents
+
+`forge "https://forgeapi.puppetlabs.com"  
+ mod   'puppetlabs-stdlib',      '4.x'`  
+
+save and exit and then run the following command
+
+`/usr/local/bin/librarian-puppet install`
+
+This will install the stdlib from puppet forge to the local modules directory  
+
+## Creating modules
+The puppet modules will be created under /etc/pupptlabs/code/modules directory. 
+
+
 
 
 
